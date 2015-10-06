@@ -72,8 +72,8 @@ this behaviour).
 
 ````
 
-
-PS:\> .\IPv6-Regex.ps1 -Verbose
+PS:\> Import-Module IPv6Regex
+PS:\> IPv6Regex -Verbose
 VERBOSE:  0 of 470 unique tests failed in   75ms for 'IPv6 Regex'
 VERBOSE:  0 of 470 unique tests failed in  174ms for 'Compiled IPv6 Regex'
 VERBOSE: 19 of 470 unique tests failed in   88ms for 'Php1'
