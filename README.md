@@ -147,10 +147,10 @@ Qualified Net IpAddress TryParse() Method fe80:0000:0000:0000:0204:61ff:254.157.
 ````
 Version History:
 ---------------
- V1.1 (This version)
+ V1.1.1 (This version)
   - Updated inline help and Readme
 
- V1.0 
+ V1.0 (Original Published Version)
   - Initial release to the PowerShell Gallery and TechNet Script Center
 
  V0.1-0.9 Dev versions
