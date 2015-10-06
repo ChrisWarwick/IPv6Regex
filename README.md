@@ -38,9 +38,56 @@ Compiling regexs is an expensive operation, and even for the relatively large nu
 
 Although the IpAddress.TryParse() method has some idiosyncrasies it may be preferred to the regex matching methods given the complexity of these regexs (IpAddress.TryParse() is probably equally as complex but the at least the complexity is hidden :-)
 
+
+Script Help
+-----------
+````
+
+<#
+.SYNOPSIS
+   Tests IPv6 Regex patterns against a large number of sample test addresses. 
+.DESCRIPTION
+   This function tests a number of IPv6 regexs against a selection of valid and invalid
+   IPv6 addresses to verify that the regexs perform as expected.  The function also tests
+   the sample addresses using the [System.Net.IpAddress]::TryParse() method to illustrate
+   the performance and conformance of this method.
+.NOTES
+   The script will time the relative performance of the various regexs; use the -Verbose
+   switch to display the timimg information.
+.PARAMETER TestName
+   If specified, only run tests with names matching this.
+.PARAMETER NoFormat
+   Provide raw output objects for each test.  The default is to select only failing test
+   result objects and to format the resulting output.  Use this parameter if you wish to 
+   use a different selection or formatting option to the default provided here.
+.EXAMPLE
+   IPv6Regex
+   Run all tests and display those that fail.
+.EXAMPLE
+   IPv6Regex -Verbose
+   Run all tests; additionally display relative performance timings.
+.EXAMPLE
+   IPv6Regex -TestName 'compiled'
+   Only run tests where the test name includes the string 'compiled'.
+.EXAMPLE
+   IPv6Regex -NoFormat
+   Run all tests and output a raw RegexMatchResult object for each test.
+.INPUTS
+   None
+.OUTPUTS
+   By default, outputs formated table of failing tests.  Use -NoFormat to output raw objects.
+.FUNCTIONALITY
+   Test IPv6 Regexs against sample IPv6 Addresses.
+.LINK
+   http://github.com/ChrisWarwick/IPv6Regex
+#>
+
+
+````
+
 Sample Output
 -------------
-**Note:** By default the script will only output results of failed tests (use the -NoFormat parameter to change this behaviour).
+**Note:** By default the script will only output results of failed tests (use the -NoFormat parameter to change this behaviour).  As illustrated below, use the -Verbose switch to display relative timing information.
 
 ````
 
@@ -98,3 +145,12 @@ Qualified Net IpAddress TryParse() Method fe80:0000:0000:0000:0204:61ff:254.157.
 
 
 ````
+Version History:
+---------------
+ V1.1 (This version)
+  - Updated inline help and Readme
+
+ V1.0 
+  - Initial release to the PowerShell Gallery and TechNet Script Center
+
+ V0.1-0.9 Dev versions
